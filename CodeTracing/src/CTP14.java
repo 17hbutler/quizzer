@@ -5,6 +5,8 @@ public class CTP14
 {
 	static boolean negOne = false;  
 	static ArrayList myArray = new ArrayList(); 
+	static int ranNum = (int)(Math.random()*myArray.size()-1); 
+	static int target = (int)myArray.get(ranNum);
 	public static void main(String[] args) 
 	{
 		userInput();
@@ -50,25 +52,49 @@ public class CTP14
 		{
 		System.out.println("----------------------------------------------");
 		int length = myArray.size();
-		int ranNum = (int)(Math.random()*myArray.size()-1); 
-		int target = (int)myArray.get(ranNum);
 		System.out.println("The target is " + ranNum);
 		System.out.println("----------------------------------------------");
 		}
 	public static void quiz() 
 		{
-		System.out.println("What is the left, right, and middle index");
+		System.out.println("What is the left index.");
 		Scanner scanner = new Scanner(System.in); 
 		int left = scanner.nextInt();
-		int right = scanner.nextInt();
-		int middle = scanner.nextInt(); 
-		if(left < 0 || left > 0) 
+		if(left > 0 || left < 0) 
 			{
-			System.out.println("The first left index must be a zero.");
+			System.out.println("The first left index must be a 0.");
 			}
 		else 
 			{
-			
+			System.out.println("CORRECT");
+			}
+		System.out.println("What is the rigth index.");
+		int right = scanner.nextInt();
+		if(right != myArray.size()-1) 
+			{
+			System.out.println("The first right index must be the length of the Array - 1");
+			}
+		else 
+			{
+			System.out.println("CORRECT");
+			}
+		System.out.println("What is the middle index.");
+		int middle = scanner.nextInt();
+		if(middle != left + right / 2 )
+			{
+			System.out.println("The middle index is the left index + right index / 2.");
+			}
+		else 
+			{
+			System.out.println("CORRECT");
+			}
+		while(left <= right) 
+			{
+			System.out.println("Do you and one to the left or subtract one from the right. ");
+			if(target < myArray[middle]) 
+				{
+				
+				}
 			}
 		}
 
